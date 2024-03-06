@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-200 py-4 mt-20">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between px-4">
         <div className="mb-4 md:mb-0">
           <Image src={logo} alt="Logo" className="h-8 w-auto" />
         </div>
@@ -23,11 +23,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <p className="text-sm text-gray-500 mt-2 md:mt-0">
-            &copy; {currentYear} PropertyPulse. All rights reserved.
-          </p>
-        </div>
+      </div>
+      <div className="container mx-auto flex justify-center">
+        <p className="text-sm text-gray-500 mt-2">
+          &copy; {currentYear} PropertyPulse. All rights reserved.
+        </p>
       </div>
     </footer>
   );
