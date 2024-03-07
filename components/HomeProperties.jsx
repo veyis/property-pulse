@@ -19,6 +19,7 @@ const HomeProperties = (property) => {
               <p>No properties found</p>
             ) : (
               recentProperties.map((property) => (
+                
                 <PropertyCard key={property.id} property={property} />
               ))
             )}

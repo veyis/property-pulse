@@ -21,7 +21,8 @@ const PropertyCard = ({ property }) => {
   };
 
   return (
-    <>
+    <div key={property._id}>
+      {/* {property._id} */}
       <div className="rounded-xl shadow-md relative">
         <Image
           src={`/images/properties/${property.images[0]}`}
@@ -42,8 +43,8 @@ const PropertyCard = ({ property }) => {
 
           <div className="flex justify-center gap-4 text-gray-500 mb-4">
             <p>
-              <FaBed className="inline mr-2" /> {property.beds}{" "}
-              <span className="md:hidden lg:inline">Beds</span>
+              <FaBed className="inline mr-2" aria-label="Number of beds" />{" "}
+              {property.beds} <span className="md:hidden lg:inline">Beds</span>
             </p>
             <p>
               <FaBath className="inline mr-2" /> {property.baths}{" "}
@@ -95,7 +96,7 @@ const PropertyCard = ({ property }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
