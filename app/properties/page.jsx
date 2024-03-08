@@ -1,8 +1,23 @@
-import Image from "next/image";
-import properties from "@/properties.json";
 import PropertyCard from "@/components/PropertyCard";
 
-const PropertiesPage = () => {
+const fetchProperties = async () => {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties`);
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch properties");
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const PropertiesPage = async () => {
+  const properties = await fetchProperties();
+  console.log(properties);
+
   return (
     <section className="px-4 py-6">
       <div className="container-xl lg:container mx-auto px-4 py-6">
