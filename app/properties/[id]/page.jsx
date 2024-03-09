@@ -6,7 +6,6 @@ import { fetchProperty } from "@/utils/requests";
 import { PropertyHeaderImage } from "@/components/PropertyHeaderImage";
 import Link from "next/link";
 import PropertyDetails from "@/components/PropertyDetails";
-
 import { FaArrowLeft } from "react-icons/fa";
 
 const PropertyPage = () => {
