@@ -1,54 +1,81 @@
-import { Schema, model, models } from "mongoose";
+import { Schema, model, models } from 'mongoose';
 
 const PropertySchema = new Schema(
   {
     owner: {
       type: Schema.Types.ObjectId,
-      ref: "User",
-      required: [true, "Owner is required"],
+      ref: 'User',
+      required: true,
     },
     name: {
       type: String,
-      required: [true, "Name is required"],
+      required: true,
     },
     type: {
       type: String,
-      required: [true, "Type is required"],
+      required: true,
     },
-    description: String, // No need to explicitly specify type: String here
-
+    description: {
+      type: String,
+    },
     location: {
-      street: String, // Simplified for clarity, you can add validation if needed
-      city: String,
-      state: String,
-      zipcode: String,
+      street: {
+        type: String,
+      },
+      city: {
+        type: String,
+      },
+      state: {
+        type: String,
+      },
+      zipcode: {
+        type: String,
+      },
     },
     beds: {
       type: Number,
-      required: [true, "Beds is required"],
+      required: true,
     },
     baths: {
       type: Number,
-      required: [true, "Baths is required"],
+      required: true,
     },
     square_feet: {
       type: Number,
-      required: [true, "Square feet is required"],
+      required: true,
     },
-    amenities: [String], // Simplified array of strings
-
+    amenities: [
+      {
+        type: String,
+      },
+    ],
     rates: {
-      nightly: Number,
-      weekly: Number,
-      monthly: Number,
+      nightly: {
+        type: Number,
+      },
+      weekly: {
+        type: Number,
+      },
+      monthly: {
+        type: Number,
+      },
     },
-
     seller_info: {
-      name: String,
-      email: String,
-      phone: String,
+      name: {
+        type: String,
+      },
+      email: {
+        type: String,
+      },
+      phone: {
+        type: String,
+      },
     },
-    images: [String], // Array of image URLs
+    images: [
+      {
+        type: String,
+      },
+    ],
     is_featured: {
       type: Boolean,
       default: false,
@@ -59,7 +86,6 @@ const PropertySchema = new Schema(
   }
 );
 
-// Ensuring the model is not recompiled if it was already compiled
-const Property = models.Property || model("Property", PropertySchema);
+const Property = models.Property || model('Property', PropertySchema);
 
 export default Property;

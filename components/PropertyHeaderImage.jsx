@@ -1,17 +1,19 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const PropertyHeaderImage = ({ image }) => {
+  // console.log('nmy imagessss:', `/images/properties/${image}`);
+
   return (
     <section>
-      <div className="container-xl m-auto">
-        <div className="grid grid-cols-1">
+      <div className='container-xl m-auto'>
+        <div className='grid grid-cols-1'>
           <Image
             src={`/images/properties/${image}`}
             alt={image}
-            className="object-cover h-[400px] w-full"
+            className='object-cover h-[400px] w-full'
             width={0}
             height={0}
-            sizes="100vw"
+            sizes='100vw'
             priority={true}
           />
         </div>
@@ -19,9 +21,4 @@ const PropertyHeaderImage = ({ image }) => {
     </section>
   );
 };
-
-export { PropertyHeaderImage };
-
-
-
-
+export default PropertyHeaderImage;
